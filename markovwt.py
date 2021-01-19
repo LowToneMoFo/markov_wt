@@ -39,8 +39,9 @@ class MarkovWt(object):
                 self.database[key].append(word)
             else:
                 self.database[key] = [word]
-
-
+        
+        print("-- Markov model generated --")
+        print()
 
     def generate_sentence(self, wordlength):
         """
@@ -101,13 +102,13 @@ class MarkovWt(object):
 
 my_markov = MarkovWt()
 
-my_markov.create_markov_from_text("TrumpTweets2.txt")
+my_markov.create_markov_from_text("1984.txt")
 
 #generate new sentences to console with short delays:
 while True:
     print(my_markov.generate_sentence(random.randint(10,30)))
     print("---")
-    time.sleep(5)
+    time.sleep(3)
 
 
 
